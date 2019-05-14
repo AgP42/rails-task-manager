@@ -1,18 +1,12 @@
-<h1>New task</h1>
+<div class="container mt-5 p-3 card">
+  <div class="row">
+    <h1>New task</h1>
+  </div>
 
+  <%= render 'form' %>
 
-<%= form_for(@task) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <div class="row border-top mt-5">
+    <%= link_to "Back to list", tasks_path %>
+  </div>
 
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-
-  <%= f.submit %>
-<% end %>
-
-
-
-<div>
-  <%= link_to "Back to list", tasks_path %>
 </div>
