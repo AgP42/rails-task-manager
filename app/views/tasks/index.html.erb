@@ -1,0 +1,20 @@
+<div class="container mt-5 card">
+  <h1>My tasks</h1>
+
+  <div class="row mt-5">
+    <ul class="list-group list-group-flush">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item">
+        <%= task.completed ? "[x]": "[ ]" %> -
+        <%= link_to task.title, task_path(task) %>
+        <%= link_to "(edit)", edit_task_path(task) %>
+        <%= link_to "(delete)", task_path(task), method: :delete %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+
+  <div class="row border-top mt-5">
+    <%= link_to "Add a new task", new_task_path %>
+  </div>
+</div>
